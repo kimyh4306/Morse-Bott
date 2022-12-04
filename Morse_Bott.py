@@ -35,38 +35,38 @@ def subsets(s):
     return list(map(set, powerset(s)) )
 
 def tfconverter(w):
-  temp=[]
-  for i in range(0,len(w)):
-    temp.append(1-w[i])
-  return temp
+    temp=[]
+    for i in range(0,len(w)):
+      temp.append(1-w[i])
+    return temp
 
 def Singleorbit(a, m, n):
-  I = []
-  K = []
-  temp = []
-  for t in range(0,m):
-    I.append(t)
-  J = subsets(I)
-  for t in J:
-    for s in I:
-      if s in t:
-        temp.append(1)
-      else:
-        temp.append(0)
-    K.append(temp)
-    temp=[]
-  #print(K)
-  Single=[]
-  tf = 0
-  for t in K:
-    for s in a:
-      if np.matmul(np.array(s), np.array(tfconverter(t)).transpose()) == 0:
-        tf=1
-    if tf == 0:
-      Single.append(t)  
-    tf=0  
-  del Single[0]
-  return Single
+    I = []
+    K = []
+    temp = []
+    for t in range(0,m):
+      I.append(t)
+    J = subsets(I)
+    for t in J:
+      for s in I:
+        if s in t:
+          temp.append(1)
+        else:
+          temp.append(0)
+      K.append(temp)
+      temp=[]
+    #print(K)
+    Single=[]
+    tf = 0
+    for t in K:
+      for s in a:
+        if np.matmul(np.array(s), np.array(tfconverter(t)).transpose()) == 0:
+          tf=1
+      if tf == 0:
+        Single.append(t)  
+      tf=0  
+    del Single[0]
+    return Single
 
 def tempset(iterable, n):
     s = list(iterable)
@@ -622,7 +622,6 @@ if whp_detecter(coeff,m,n,d_max) == True:
     print()
     print("Spectral Sequence for positive homology has terms:")
     print()
-    print(MorseBottComponent(coeff, weight, d, m, n))
     print(list(SSConverter(SS_rational(MorseBottComponent(coeff, weight, d, m, n)))))
     print()
     print("Mean Euler Characteristic for S^1 Equivariant SH is:")
