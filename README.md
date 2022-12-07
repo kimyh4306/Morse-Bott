@@ -1,5 +1,5 @@
 ## Python program that computes Morse-Bott spectral sequence for symplectic homology
-Consider the following [link](https://drive.google.com/file/d/1DW6EujfaF360wOdVaIEZrbmbc4VfO03i/view?usp=sharing) for a picture of how the $E^1$-page of the spectral sequence looks like that comes out as the output of this code.
+Consider the following [link](https://drive.google.com/file/d/1dFBmN2ieNsEfwmmtnGy0RXa18gofNjlV/view?usp=sharing) for a picture of how the $E^1$-page of the spectral sequence looks like. The output of this code gives the coordinates of the entries, and the rank ($=$dimension as a $Q$-vector space) of the entry.
 
 ### Input
 Given by coefficient matrix: for example, the Brieskorn polynomial $x^2+y^2+z^3$ is given to the standard input as
